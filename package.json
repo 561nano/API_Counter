@@ -1,0 +1,30 @@
+{
+  "name": "api_counter",
+  "version": "1.0.0",
+  "description": "Count the request you make. This package is nothing more than a counter, it was created out of restrictions on food2fork.com api. food2fork only allow up to 50 request per day (for free).",
+  "main": "APICounter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/561nano/API_Counter.git"
+  },
+  "keywords": [
+    "counter",
+    "count",
+    "API",
+    "request",
+    "log",
+    "fetch",
+    "async",
+    "await",
+    "function"
+  ],
+  "author": "Christian Serrano <561nano@gmail.com> (https://github.com/561nano)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/561nano/API_Counter/issues"
+  },
+  "homepage": "https://github.com/561nano/API_Counter#readme"
+}
