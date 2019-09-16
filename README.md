@@ -18,7 +18,7 @@ You can have multiple counters, just pass in a name as a string. If you do not p
 ```javascript
 try {
     const result = fetch(`https://www.food2fork.com/api/search?key=1235`);
-    APICounter('food2forkAPI');
+    APICounter('food2forkAPI', 50);
 } catch (error) {
     console.log(error);
     APICounter('errorCount')
