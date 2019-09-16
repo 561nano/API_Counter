@@ -1,6 +1,6 @@
 {
   "name": "api_counter",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Count the request you make. This package is nothing more than a counter, it was created out of restrictions on food2fork.com api. food2fork only allow up to 50 request per day (for free).",
   "main": "APICounter.js",
   "scripts": {
