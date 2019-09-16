@@ -8,15 +8,14 @@
 * clsli = current local storage last item - meaning the last object in the array
 * */
 
-
-const APICounter = (cn = 'counterAPI') => {
+export const APICounter = (cn = 'counterAPI') => {
     const cy = new Date().getFullYear();
     const cm = new Date().getMonth();
     const cdy = new Date().getDate();
 
     //this stores the object as a string on the end user computer
     const storeObject = (cls) => {
-        console.log(`Daily API calls: ${cls.data[cls.data.length-1].counterAPI}`);
+        console.log(`Daily API calls for ${cn} : ${cls.data[cls.data.length-1].counterAPI}`);
         localStorage.setItem(cn, JSON.stringify(cls));
     };
 
