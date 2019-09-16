@@ -1,15 +1,9 @@
-/* Count # of API request
+/* Count # of API request */
 
-* cls = current local storage
-* cy = current year
-* cm = current month
-* cdy = current day
-* cn = counter name
-* clsli = current local storage last item - meaning the last object in the array
-* */
 const cy = new Date().getFullYear();
 const cm = new Date().getMonth();
 const cdy = new Date().getDate();
+const tm = new Date().getTime();
 
 export const APICounter = (cn = 'counterAPI', limit = 0) => {
 
@@ -38,7 +32,8 @@ export const APICounter = (cn = 'counterAPI', limit = 0) => {
                     counterAPI: 1,
                     counterYear: cy,
                     counterMonth: cm,
-                    counterDay: cdy
+                    counterDay: cdy,
+                    counterTime: tm
                 }
             ]
         };
@@ -47,6 +42,7 @@ export const APICounter = (cn = 'counterAPI', limit = 0) => {
         let cls = JSON.parse(localStorage.getItem(cn));
         let clsli = cls.data[cls.data.length - 1];
 
+        // this check if any change but time
         if (parseInt(clsli.counterYear) === cy &&
             parseInt(clsli.counterMonth) === cm &&
             parseInt(clsli.counterDay) === cdy) {
@@ -59,6 +55,7 @@ export const APICounter = (cn = 'counterAPI', limit = 0) => {
                 counterYear: cy,
                 counterMonth: cm,
                 counterDay: cdy,
+                counterTime: tm,
             };
             storeObject(cls);
             isLimit(cls, limit);
