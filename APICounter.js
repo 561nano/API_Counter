@@ -23,6 +23,8 @@ export const APICounter = (cn = 'counterAPI', limit = 0) => {
         if (Math.ceil(parseInt(limit)) > 0) {
             if (parseInt(cls.data[cls.data.length - 1].counterAPI) === parseInt(limit)) {
                 alert(`💔 You have reached your limit for ${cn} 💔`);
+            } else if (parseInt(limit) === parseInt(limit) -1) {
+                alert(`❗😮❗ You have one request before your limit: ${cn} ❗😮❗`)
             } else if (Math.ceil((parseInt(limit)) / 2) >= limit) {
                 alert(`❗ You have reached more than half of your limit for ${cn} ❗`)
             }
