@@ -7,11 +7,11 @@
 * cn = counter name
 * clsli = current local storage last item - meaning the last object in the array
 * */
+const cy = new Date().getFullYear();
+const cm = new Date().getMonth();
+const cdy = new Date().getDate();
 
 export const APICounter = (cn = 'counterAPI', limit = 0) => {
-    const cy = new Date().getFullYear();
-    const cm = new Date().getMonth();
-    const cdy = new Date().getDate();
 
     //this stores the object as a string on the end user computer
     const storeObject = (cls) => {
@@ -66,4 +66,19 @@ export const APICounter = (cn = 'counterAPI', limit = 0) => {
     }
 };
 
-APICounter();
+export const rol = (cn = 'counterAPI', type = 'soft') => {
+    localStorage.removeItem(cn);
+    if (type === 'soft'){
+        let cls = {
+            data: [
+                {
+                    counterAPI: 1,
+                    counterYear: cy,
+                    counterMonth: cm,
+                    counterDay: cdy
+                }
+            ]
+        };
+        localStorage.setItem(cn,JSON.stringify(cls));
+    }
+};
