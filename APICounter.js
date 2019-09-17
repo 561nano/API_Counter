@@ -6,17 +6,17 @@ const cdy = new Date().getDate();
 const tm = new Date().getTime();
 let cls;
 
-const getCLS = (cn = 'counterAPI') => {
+const getCLS = (cn = 'mainCounter') => {
     cls = JSON.parse(localStorage.getItem(cn));
 };
 
-const storeObject = (cn = 'counterAPI', cls) => {
+const storeObject = (cn = 'mainCounter', cls) => {
     console.log(`Daily API calls for ${cn} : ${cls.data[cls.data.length - 1].counterAPI}`);
     localStorage.setItem(cn, JSON.stringify(cls));
 };
 
 // rest counter hard =nothing left behind or soft = reset to daily
-const rol = (cn = 'counterAPI', type = 'soft') => {
+const rol = (cn = 'mainCounter', type = 'soft') => {
     localStorage.removeItem(cn);
     if (type === 'soft'){
         let cls = {
@@ -36,7 +36,7 @@ const rol = (cn = 'counterAPI', type = 'soft') => {
 
 // checks the limit of counter
 // TODO add function to get the current cls so that it's not required to be passed in.
-const isLimit = (cn = 'counterAPI', cls, limit) => {
+const isLimit = (cn = 'mainCounter', cls, limit) => {
     if (Math.ceil(parseInt(limit)) > 0) {
         if (parseInt(cls.data[cls.data.length - 1].counterAPI) === parseInt(limit)) {
             alert(`💔 You have reached your limit for ${cn} 💔`);
@@ -48,7 +48,7 @@ const isLimit = (cn = 'counterAPI', cls, limit) => {
     }
 };
 
-const APICounter = (cn = 'counterAPI', limit = 0) => {
+const APICounter = (cn = 'mainCounter', limit = 0) => {
     if (localStorage.getItem(cn) === null) {
         let cls = {
             data: [
