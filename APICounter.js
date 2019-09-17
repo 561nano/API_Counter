@@ -4,6 +4,11 @@ const cy = new Date().getFullYear();
 const cm = new Date().getMonth();
 const cdy = new Date().getDate();
 const tm = new Date().getTime();
+let cls;
+
+const getCLS = (cn = 'counterAPI') => {
+    cls = JSON.parse(localStorage.getItem(cn));
+};
 
 const storeObject = (cn = 'counterAPI', cls) => {
     console.log(`Daily API calls for ${cn} : ${cls.data[cls.data.length - 1].counterAPI}`);
@@ -20,11 +25,12 @@ const rol = (cn = 'counterAPI', type = 'soft') => {
                     counterAPI: 1,
                     counterYear: cy,
                     counterMonth: cm,
-                    counterDay: cdy
+                    counterDay: cdy,
+                    counterTime: tm
                 }
             ]
         };
-        localStorage.setItem(cn,JSON.stringify(cls));
+        storeObject(cn, cls);
     }
 };
 
