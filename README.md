@@ -1,6 +1,8 @@
 # API Counter
 Count the request you make. This npm package is nothing more than a counter.  
-This package was created out of restrictions on certain free API's limiting 50 request per day.
+This package was created out of restrictions on certain free API's limiting 50 request per day.   
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  
 
 # Goals
 - [x] Count the the number of request and store (cache) in browser.
@@ -37,7 +39,7 @@ try {
 }
 ```
 
-# understanding the acronyms
+# understanding the acronyms and format
 * Function Format = cn , cls , limit, type
 * cn = counter name
 * cls = current local storage
