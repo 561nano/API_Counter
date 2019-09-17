@@ -16,7 +16,7 @@ const storeObject = (cn = 'mainCounter', cls) => {
 };
 
 // rest counter hard =nothing left behind or soft = reset to daily
-const rol = (cn = 'mainCounter', type = 'soft') => {
+const resetCounter = (cn = 'mainCounter', type = 'soft') => {
     localStorage.removeItem(cn);
     if (type === 'soft'){
         let cls = {
@@ -50,9 +50,9 @@ const isLimit = (cn = 'mainCounter', cls, limit) => {
 
 const APICounter = (cn = 'mainCounter', limit = 0) => {
     if (localStorage.getItem(cn) === null) {
-        rol(cn);
+        resetCounter(cn);
     } else {
-        let cls = JSON.parse(localStorage.getItem(cn));
+        getCLS(cn);
         let clsli = cls.data[cls.data.length - 1];
 
         // this check if any change but time
