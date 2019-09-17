@@ -9,11 +9,13 @@ This package was created out of restrictions on certain free API's limiting 50 r
 - [x] Warn the developer if they are about to reach their limit
 - [x] Warn the developer if they have reached their limit
 - [x] Notify the developer that they have 1 request left
+- [x] Notify the developer that they have gone over there request
 - [x] The ability to reset a counter
+- [x] The ability to remove or reset one counter with out ```localStorage.clear()```
+    * ```restCounter('counterAPI','soft')``` soft to reset to 0 or hard to erase counter
 - [ ] Return the object if requested
     - ```APICounter('counterNameAsString', 50, JSON or yes for current counter object)``` or create a function to public JSON
-- [ ] The ability to turn on or off the ```console.log``` and or ```alert```
-- [ ] The ability to remove one counter with out ```localStorage.clear()```
+- [ ] The ability to choice how to receive alert by ```console.log```, ```alert``` or ```return counter```
 - [ ] Create a mini version of this package
 - [ ] add the ability to log every add and request beside hard reset
 - [ ] Provide the length of time until they can use there API again.
@@ -28,7 +30,7 @@ You can also add a ```limit``` to alert you that you have used 50% or 100% of yo
 ```javascript
 try {
     const result = fetch(`https://www.apiurl.com/api/search?key=1235`);
-    APICounter('mainAPI', 50);
+    APICounter('mainCounter', 50);
 } catch (error) {
     console.log(error);
     APICounter('errorCount')
@@ -36,14 +38,38 @@ try {
 ```
 
 # understanding the acronyms
+* Function Format = cn , cls , limit, type
+* cn = counter name
 * cls = current local storage
+* limit = at what count do you want to be warn by
+* type = soft or hard reset
 * cy = current year
 * cm = current month
 * cdy = current day
-* cn = counter name
 * clsli = current local storage last item - meaning the last object in the array
-* rol = rest on local
 * ldt = last date
 * tm = time
+
+# Data structure of JSON "file"
+```javascript
+let cls = {
+  data: [
+    {
+      counterAPI: 1,
+      counterYear: 2022,
+      counterMonth: 12,
+      counterDay: 24,
+      counterTime: 1568681773241
+    },
+    {
+      counterAPI: 48,
+      counterYear: 2022,
+      counterMonth: 12,
+      counterDay: 25,
+      counterTime: 1568681901168
+    }
+  ]
+};
+```
 
 ##### Pull request are recommend and any features you want let's collaborate
