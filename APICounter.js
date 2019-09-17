@@ -50,18 +50,7 @@ const isLimit = (cn = 'mainCounter', cls, limit) => {
 
 const APICounter = (cn = 'mainCounter', limit = 0) => {
     if (localStorage.getItem(cn) === null) {
-        let cls = {
-            data: [
-                {
-                    counterAPI: 1,
-                    counterYear: cy,
-                    counterMonth: cm,
-                    counterDay: cdy,
-                    counterTime: tm
-                }
-            ]
-        };
-        storeObject(cn, cls);
+        rol(cn);
     } else {
         let cls = JSON.parse(localStorage.getItem(cn));
         let clsli = cls.data[cls.data.length - 1];
