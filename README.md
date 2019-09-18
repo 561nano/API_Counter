@@ -26,8 +26,8 @@ This package was created out of restrictions on certain free API's limiting 50 r
     - Hourly, daily, weekly, monthly and yearly
 
 # How to use APICounter()
-All you have todo is add APICounter to your project via ```npm i api_counter```, add it to your ```try and catch``` or where ever you want to count.  
-You can have multiple counters, just pass in a name as a ```string```. If you do not pass in a name as the variable it will default to ```'counterAPI'```.  
+All you have todo is add ```APICounter()``` to your project via ```npm i api_counter```, add it to your ```try and catch``` or where ever you want to count.  
+You can have multiple counters, just pass in a name as a ```'string'```. If you do not pass in a name as the variable it will default to ```'mainCounter'```.  
 You can also add a ```limit``` to alert you that you have used 50% or 100% of your daily use. ```APICounter('counterNameAsString', limit as intiger)``` 
 ```javascript
 try {
@@ -57,7 +57,7 @@ try {
 let cls = {
   data: [
     {
-      counterAPI: 1,
+      counterAPI: 13,
       counterYear: 2022,
       counterMonth: 12,
       counterDay: 24,
