@@ -6,8 +6,9 @@ const cdy = new Date().getDate();
 const tm = new Date().getTime();
 let cls;
 
-const getCLS = (cn = 'mainCounter') => {
+const getCLS = (cn = 'mainCounter', giveback = 0) => {
     cls = JSON.parse(localStorage.getItem(cn));
+    if (giveback === 1) {return cls}; 
 };
 
 const storeObject = (cn = 'mainCounter', cls) => {
