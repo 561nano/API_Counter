@@ -15,8 +15,8 @@ This package was created out of restrictions on certain free API's limiting 50 r
 - [x] The ability to reset a counter
 - [x] The ability to remove or reset one counter with out ```localStorage.clear()```
     * ```restCounter('counterAPI','soft')``` soft to reset to 0 or hard to erase counter
-- [ ] Return the object if requested
-    - ```APICounter('counterNameAsString', 50, JSON or yes for current counter object)``` or create a function to public JSON
+- [x] Return the object if requested
+    * ```getCLS = (cn = 'mainCounter', 1)``` giveback = 1: Return Object or 0: Update CLS (0 is default)
 - [ ] The ability to choice how to receive alert by ```console.log```, ```alert``` or ```return counter```
 - [ ] Create a mini version of this package
 - [ ] add the ability to log every add and request beside hard reset
@@ -27,6 +27,7 @@ This package was created out of restrictions on certain free API's limiting 50 r
 
 # How to use APICounter()
 All you have todo is add ```APICounter()``` to your project via ```npm i api_counter```, add it to your ```try and catch``` or where ever you want to count.  
+
 You can have multiple counters, just pass in a name as a ```'string'```. If you do not pass in a name as the variable it will default to ```'mainCounter'```.  
 You can also add a ```limit``` to alert you that you have used 50% or 100% of your daily use. ```APICounter('counterNameAsString', limit as intiger)``` 
 ```javascript
