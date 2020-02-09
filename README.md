@@ -6,6 +6,7 @@ This package was created out of restrictions on certain free API's limiting 50 r
 
 # Goals
 - [x] Count the the number of request and store (cache) in browser.
+- [x] Add function to list all counters and Localstrorge keys
 - [x] Convert counter from simple string to json (json)
 - [x] Log the number of request per day (json)
 - [x] Warn the developer if they are about to reach their limit
@@ -38,6 +39,12 @@ try {
     console.log(error);
     APICounter('errorCount')
 }
+```
+
+# Function that you can use
+Gives you everything in localstorage (Current web page/domain) 
+```javascript
+allStorage()
 ```
 
 # understanding the acronyms and format
