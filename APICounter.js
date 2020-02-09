@@ -35,7 +35,6 @@ const resetCounter = (cn = 'mainCounter', type = 'soft') => {
 };
 
 // checks the limit of counter
-// TODO add function to get the current cls so that it's not required to be passed in.
 const isLimit = (cn = 'mainCounter', cls, limit) => {
     if (Math.ceil(parseInt(limit)) > 0) {
         if (parseInt(cls.data[cls.data.length - 1].counterAPI) === parseInt(limit)) {
@@ -48,6 +47,21 @@ const isLimit = (cn = 'mainCounter', cls, limit) => {
     }
 };
 
+// see all stored localStorage keys and values
+const allStorage = () => {
+
+    let archive = {},
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        archive[ keys[i] ] = localStorage.getItem( keys[i] );
+    }
+
+    return archive;
+};
+
+// Main Function
 const APICounter = (cn = 'mainCounter', limit = 0) => {
     if (localStorage.getItem(cn) === null) {
         resetCounter(cn);
